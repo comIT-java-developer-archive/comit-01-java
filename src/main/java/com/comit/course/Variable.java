@@ -33,6 +33,8 @@ public class Variable {
     	 * Text Variables
     	 */
     	
+    	int x = 0;
+    	
     	char g = 'A'; // 2 bytes
     	
     	
@@ -64,6 +66,8 @@ public class Variable {
     	List<String> list = new ArrayList<>();
     	
     	list.add("Hello");
+    	
+    	System.out.println("This is a modification.");
 	}
     
 }
