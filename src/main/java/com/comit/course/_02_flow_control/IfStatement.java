@@ -2,6 +2,7 @@ package com.comit.course._02_flow_control;
 
 public class IfStatement {
 
+	// Book - Page 65 - 68
 	public static void main(String[] args) {
 
 		int a = 28;
@@ -47,7 +48,24 @@ public class IfStatement {
 				System.out.println("a is equal to b");
 			}
 		}
+		
+		
+		String str;
+		
+		a = 10;
+		b = 15;
+		
+		if ( a > b) {
+			str = "a greater than b";
+		}
+		else {
+			str = "a less than b";			
+		}
 
+		// Ternary Operator ? :
+		str = (a > b) ? "a greater than b" : "a less than b"; 
+		
+		System.out.println(str);
 	}
 
 }
