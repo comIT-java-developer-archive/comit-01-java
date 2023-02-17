@@ -26,7 +26,7 @@ public class ForLoop {
 		
 		/* for-each-loop, enhanced for-loop  As of Java 5 */
 		
-		int a = 5;
+		//int a = 5;
 		int[] array = { 1, 2, 3, 4, 5 };
 		
 		for(int c: array) {
