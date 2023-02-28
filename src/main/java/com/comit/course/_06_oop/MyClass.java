@@ -1,6 +1,8 @@
 package com.comit.course._06_oop;
 
 /*
+ * 
+ * Book Pages 89 - 103
  * A Class is construction map or blueprint for creating objects.
  * 
  * A class has three types of elements.
@@ -44,8 +46,6 @@ class Employee {
 		this.salary = salary;
 		this.position = position;
 	}
-
-
 
 	/*
 	 * Method is a block of code that runs when it is called.
