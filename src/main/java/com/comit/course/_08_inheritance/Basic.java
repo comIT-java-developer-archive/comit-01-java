@@ -36,7 +36,7 @@ class Parent extends Object {
 	 * The signature of a method() in Java is the method declaration:
 	 * return type - method name - parameters
 	 * 
-	 * Overriding with Overloading is a form of polymorfism.
+	 * Overriding with Overloading is a form of polymorphism.
 	 */
 	@Override
 	public String toString() {
