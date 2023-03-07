@@ -4,6 +4,8 @@ package com.comit.course._12_interface;
 /*
  * An interface in Java is like a contract that must be accomplished by
  * the class that implements the interface. 
+ * 
+ * We use interfaces to implements the Data Abstraction OOP.
  */
 interface Income {
 
@@ -19,11 +21,21 @@ interface Income {
 	void doSomething();
 	
 	/* 
+	 * Java 8
+	 * 
+	 * Interfaces default and static methods where created as a workaround
+	 * to allow us to add new methods to old interfaces without breaking
+	 * someoneelse's code. 
+	 * 
 	 * The default keyword indicates that I will implement the method
 	 * in the interface to avoid someone else's code
 	 */
 	default void doSomething2() {
 		System.out.println("Doing Something 2");
+	}
+
+	static void doSomething3() {
+		System.out.println("Doing Something 3");
 	}
 }
 
@@ -67,13 +79,33 @@ class Employee implements Income, MyInterface {
 	
 }
 
+class MyClass implements Income{
+
+	@Override
+	public double calculatePay(double salary, double taxes) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void doSomething() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}
 public class InterfaceExample {
 
 	public static void main(String[] args) {
 		
-		Employee emp = new Employee();
+		Income emp = new Employee();
 		emp.doSomething();
 		emp.doSomething2();
+		
+		((Employee)emp).display();
+		
+		Income.doSomething3();
 
 	}
 
