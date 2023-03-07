@@ -1,7 +1,7 @@
 package com.comit.course._12_interface;
 
 
-/*
+/* Page 131 - 135
  * An interface in Java is like a contract that must be accomplished by
  * the class that implements the interface. 
  * 
