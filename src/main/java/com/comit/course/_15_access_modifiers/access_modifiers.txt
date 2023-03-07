@@ -1,0 +1,6 @@
+
+
+1. private - visibility within the same class. Applied to attributes, methods and constructors.
+2. default - visibility within the same package (package default). Applies to classes, attributes, methods and constructors.
+3. protected - same as default, but the members have visibility via inheritance. Applies to attributes, methods and constructors
+4. public - visibility from anywhere in the project. Applies to classes, attributes, methods and constructors.
