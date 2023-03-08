@@ -3,8 +3,8 @@ package com.comit.course._15_access_modifiers._03_protected.same_package;
 
 /*
  * The protected access modifier is same as default but we have access to the members via inheritance.
- 
  */
+
 public class MyClass {
    
 	/*
