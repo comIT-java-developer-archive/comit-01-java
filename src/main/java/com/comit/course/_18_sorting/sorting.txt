@@ -1,0 +1,25 @@
+
+Sorting Algorithms
+******************
+
+A sorting algorithm is an algorithm that puts the elements of a 
+list in particular order (ascending or descending)
+
+1. QuickSort  (Java uses QuickSort)
+2. MergeSort
+3. BubbleSort
+ 
+Time Complexity
+***************
+
+Is a concept that tells us about the efficiency of an algorithm 
+when the size of the input is massive.
+
+The time complexity is expressed using Big O Notation
+
+O(n) - Linear
+O(nlogn)
+O(n^2) - Quadratic
+O(1) - Constant
+
+https://www.bigocheatsheet.com/
