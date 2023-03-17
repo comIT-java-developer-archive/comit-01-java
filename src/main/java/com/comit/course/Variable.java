@@ -63,7 +63,7 @@ public class Variable {
     		System.out.println("Not Equal " + s1 + "-" + s2 );
     	}
     	
-    	List<String> list = new ArrayList<>();
+    	List<String> list = new ArrayList<String>();
     	
     	list.add("Hello");
     	

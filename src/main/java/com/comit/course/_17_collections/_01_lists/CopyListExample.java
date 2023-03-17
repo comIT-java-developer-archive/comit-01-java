@@ -35,6 +35,9 @@ public class CopyListExample {
 		System.out.println(list2);
 		System.out.println(list2.size());*/
 		
+		List<Integer> listInt = new ArrayList<>();
+		
+		
 	}
 
 }
