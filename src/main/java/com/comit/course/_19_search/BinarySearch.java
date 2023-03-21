@@ -4,12 +4,14 @@ import java.util.Arrays;
 
 /*
  * Binary Search works with sorted Arrays or ArrayLists only.
+ * 
+ * https://www.geeksforgeeks.org/complexity-analysis-of-binary-search/
  */
 public class BinarySearch {
 
 	// O(log n) - Time Complexity
     public static int binarySearch(int[] input, int key) {
-
+    	
         int start = 0;
         int end = input.length - 1;
 
