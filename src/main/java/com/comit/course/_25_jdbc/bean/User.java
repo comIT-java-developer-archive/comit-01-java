@@ -1,6 +1,6 @@
 package com.comit.course._25_jdbc.bean;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class User {
 
