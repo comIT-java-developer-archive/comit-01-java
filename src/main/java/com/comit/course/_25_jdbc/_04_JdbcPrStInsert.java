@@ -3,6 +3,7 @@ package com.comit.course._25_jdbc;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -12,7 +13,7 @@ import java.util.Scanner;
 
 import com.comit.course._25_jdbc.bean.User;
 
-public class _03_JdbcStmtList {
+public class _04_JdbcPrStInsert {
 
 	public static void main(String[] args) {
 
@@ -23,7 +24,8 @@ public class _03_JdbcStmtList {
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");  
 		
 		// SQL Injection Attack
-		String sql = "INSERT INTO USER(USERNAME, PASSWORD, FIRST_NAME, LAST_NAME, BIRTH, STATUS) VALUES ";
+		String sql = "INSERT INTO USER(USERNAME, PASSWORD, FIRST_NAME, LAST_NAME, BIRTH, STATUS) "
+				     + "VALUES(?,?,?,?,?,?)";
 						
 		User user = new User();		
 
@@ -48,23 +50,37 @@ public class _03_JdbcStmtList {
 			user.setStatus(scan.nextLine());					
 			
 		} catch (ParseException e) {
-			System.err.format("Error while parsing date : %s%n", e.getMessage());
+			System.err.format("Error while parsing date : %s%n%n", e.getMessage());
+			System.exit(-1);
 		}
-		
-		sql = sql + "('" + user.getUsername() + "','" + user.getPassword() + "','" + user.getFirstName() + "','" +
-		      user.getLastName() + "','" + formatter.format(user.getBirth()) + "','" + user.getStatus() + "')";
 		
 		System.out.println("Query: " + sql);
 
 		try(Connection con = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
-			Statement st = con.createStatement();) {
+			PreparedStatement st = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);) {
 			
-			int row = st.executeUpdate(sql);
+			st.setString(1, user.getUsername());
+			st.setString(2, user.getPassword());
+			st.setString(3, user.getFirstName());
+			st.setString(4, user.getLastName());
+			st.setDate  (5, new Date(user.getBirth().getTime()));
+			st.setString(6, user.getStatus());
+			
+			int row = st.executeUpdate();
 			
 			System.out.println("Number of rows affected: " + row);
+			
+            try (ResultSet resultSet = st.getGeneratedKeys()) {
+
+                if (resultSet.first()) {
+
+                    System.out.printf("The ID_USER of new user : %d%n", resultSet.getInt(1));
+                    user.setIdUser(resultSet.getInt(1));
+                }
+            }
 
 		} catch (SQLException e) {
-			System.err.format("SQL State: %s%n%s", e.getSQLState(), e.getMessage());
+			System.err.format("SQL State: %s%n%s%n", e.getSQLState(), e.getMessage());
 		} 
 		
 		System.out.println(user);
