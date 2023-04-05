@@ -1,0 +1,16 @@
+
+
+h1 {
+	color: blue;
+}
+
+/* css class */
+.blue_bg {
+	color: red;
+	background: cyan;
+}
+
+#hello {
+	color: green;
+	background: lightblue;
+}
